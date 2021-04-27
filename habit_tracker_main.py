@@ -35,12 +35,12 @@ headers = {
 #response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
 #print(response.text)
 
-today = datetime(year=2021, month=4, day=22)
+today = datetime(year=2021, month=4, day=23)
 pixel_creation_endpoint = f"{graph_endpoint}/{GRAPH_ID}"
 
 pixel_params = {
     "date": today.strftime("%Y%m%d"),
-    "quantity": "5"}
+    "quantity": "6.5"}
 
 response = requests.post(url=pixel_creation_endpoint, json=pixel_params, headers=headers)
 print(response.text)
