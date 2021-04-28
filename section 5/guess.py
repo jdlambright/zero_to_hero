@@ -4,7 +4,7 @@ num = random.randint(1,100)
 guesses = [0]
 correct_guess = False
 print("Pick a number between 1 and 100")
-print(num)
+#print(num)
 
 def warmer_colder():
     global num, guesses, guess
