@@ -1,11 +1,24 @@
+def summer69(arr):
+
+    total = 0
+    add = True
+
+    for num in arr:
+        while add:
+            if num != 6:
+                total += num
+                break
+            else:
+                add = False
+        while not add:
+            if num != 9:
+                break
+            else:
+                add = True
+                break
+    return total
 
 
-def triple_string(text):
-    text = ""
-    x3 = str()
-    for char in text:
-        x3 += char + char + char
-        return x3
 
-triple_string("hello")
+summer69([1,3,5])
 
