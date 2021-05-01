@@ -1,24 +1,15 @@
-def summer69(arr):
+def up_low(s):
+    lower_letters = []
+    upper_letters = []
 
-    total = 0
-    add = True
+    for letter in s:
+        if letter.islower() == True:
+            lower_letters.append(letter)
+        elif letter.isupper() == True:
+            upper_letters.append(letter)
 
-    for num in arr:
-        while add:
-            if num != 6:
-                total += num
-                break
-            else:
-                add = False
-        while not add:
-            if num != 9:
-                break
-            else:
-                add = True
-                break
-    return total
+    print(f"there are {len(lower_letters)} lower case letters in this string")
+    print(f"there are {len(upper_letters)} upper case letters in this string")
 
-
-
-summer69([1,3,5])
-
+s = 'Hello Mr. Rogers, how are you this fine Tuesday?'
+up_low(s)
