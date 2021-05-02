@@ -1,15 +1,24 @@
-def up_low(s):
-    lower_letters = []
-    upper_letters = []
+def findNextSquare(sq):
+    num_list = []
+    for num in range(1,sq):
+        num_list.append(num)
+    result = sq**.5
+    if result in num_list:
+        i = num_list.index(result)
+        print(num_list)
+        print(i)
+        next_index = num_list[i]
+        next_square = num_list[next_index]**2
+        return f"the next square is {next_square}"
 
-    for letter in s:
-        if letter.islower() == True:
-            lower_letters.append(letter)
-        elif letter.isupper() == True:
-            upper_letters.append(letter)
+    else:
+        return -1
+findNextSquare(25)
 
-    print(f"there are {len(lower_letters)} lower case letters in this string")
-    print(f"there are {len(upper_letters)} upper case letters in this string")
 
-s = 'Hello Mr. Rogers, how are you this fine Tuesday?'
-up_low(s)
+
+
+
+
+
+
