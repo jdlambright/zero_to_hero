@@ -50,7 +50,10 @@ def choose_first():
 
 
 def space_check(board, position):
-    return board[position] == " "
+    if board[position] != "X" or board[position] != "O":
+        return True
+    else:
+        return False
 
 
 def full_board_check(board):
@@ -74,14 +77,16 @@ def replay():
 
 
 print('Welcome to Tic Tac Toe!')
+BOARD= ["x","1","2","3","4","5","6","7","8","9"]
+display_board(BOARD)
 
 while True:
-    BOARD= [" "] * 10
+    BOARD= [" "]*10
     player1_marker, player2_marker = player_input()
     turn = choose_first()
     print(turn + ' will go first.')
 
-    play_game = input('Are you ready to play? Enter y or n.')
+    play_game = input('Are you ready to play? Enter y or n. ')
 
     if play_game.lower()[0] == 'y':
         game_on = True
@@ -125,9 +130,8 @@ while True:
                         break
                     else:
                         turn = 'Player 1'
-# Player2's turn.
-
-# pass
 
     if not replay():
         break
+
+        t2Kj72Gr
