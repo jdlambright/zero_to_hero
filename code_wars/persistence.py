@@ -5,22 +5,17 @@ which is the number of times you must multiply the digits in num until you reach
 import numpy
 def persistence(n):
     count = 0
-    while False:
-        if n < 10:
-            print(count)
-            return count
-        else:
+    while True:
+        if n > 9:
             res = [int(x) for x in str(n)]
             product = numpy.prod(res)
             n = product
-            count += 1
-
-    print(res)
-    print(product)
-
-
-
-
+            count +=1
+            print(res)
+            print(product)
+        else:
+            print(count)
+            return count
 
 
-persistence(39)
+persistence(999)
