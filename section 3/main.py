@@ -1,38 +1,30 @@
 '''
-# Challenge:
-# Challenge:
-ATM machines allow 4 or 6 digit PIN codes and
-PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+# Task
+Write a function that accepts a string  and returns a dictionary which holds the count of every character in the string.
 
-Create a function to validate whether an input string is a valid pin.
+# Goal
+The goal is to learn about the
+collections.Counter object!
 
 # Examples:
-validate_pin("1234")   -->  True
-validate_pin("12345")  -->  False
-validate_pin("a234")   -->  False
+>>> count("aabbbcdd")
+{"a": 2, "b": 3, "c": 1, "d": 2}
+>>> count(<object other than str>)
+ERROR: expected str, got <object>
 '''
 
-def valid_pin(pin):
-    valid_nums = ["1","2","3","4","5","6","7","8","9","0"]
-    pin.split()
-    if len(pin) == 4 or len(pin) == 6:
-        for char in pin:
-            if char in valid_nums:
-                continue
-            else:
-                print("false")
-                return False
-        else:
-            print("true")
-            return True
-    else:
-        print("false")
-        return False
+def count(string):
+    char_dict = {}
+    count = 1
+    string_list = [char for char in string]
 
+    for char in string_list:
 
+        if char not in char_dict:
+            char_dict[char]= count
+        elif char in char_dict:
+            char_dict[char] +=1
 
+    print(char_dict)
 
-
-
-
-valid_pin("b23456")
+count("abcccddeeffff")
