@@ -1,30 +1,39 @@
 '''
-# Task
-Write a function that accepts a string  and returns a dictionary which holds the count of every character in the string.
+#Description:
+Write a function that receives a list of 1's and 0's and returns the equivalent in decimal numbers
+>max len of the list = 10
 
-# Goal
-The goal is to learn about the
-collections.Counter object!
+ example:
+>>> [1,0,1,0,0]
+20
 
-# Examples:
->>> count("aabbbcdd")
-{"a": 2, "b": 3, "c": 1, "d": 2}
->>> count(<object other than str>)
-ERROR: expected str, got <object>
+Explanation:
+Basically depending on where the 1 (True) is it's value, like whit decimals
+where
+1 1 1 1 1 1 1 1 (binary) =
+128 + 64 + 32 + 16 + 8 + 4 + 2 + 1 (decimal)
+
 '''
 
-def count(string):
-    char_dict = {}
-    count = 1
-    string_list = [char for char in string]
+def binary(list):
+    bin_list = [1,2,4,8,16,32,64,128,256,512]
+    slice_bin_list = bin_list[:len(list)]
+    new_bin_list= slice_bin_list[::-1]
+    new_list= []
 
-    for char in string_list:
+    if len(list) > 10:
+        print("sorry the list is too large")
 
-        if char not in char_dict:
-            char_dict[char]= count
-        elif char in char_dict:
-            char_dict[char] +=1
+    else:
+        for i in range(0,len(list)):
+                new_list.append(list[i] * new_bin_list[i])
 
-    print(char_dict)
 
-count("abcccddeeffff")
+        print(sum(new_list))
+
+
+
+
+
+
+binary([1,0,1,0,0,1,1,1,1,1])
